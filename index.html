@@ -11,7 +11,10 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
+
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -23,7 +26,68 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <header class="class-header">
+    <div class="hero">
+      <div class="contenido-header">
+        <nav class="redes-sociales">
+          <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </nav>
+        <div class="informacion-evento">
+          <div class="clearfix">
+            <p class="fecha"><i class="fas fa-calendar-alt"></i> 10-12</p>
+            <p class="ciudad"><i class="fas fa-map-marker"></i> Barcelona, CAT</p>
+          </div>  
+        
+          <h1 class="nombre-sitio" >GdlWebCamp</h1>
+          <p class="slogan"> La mejor conferencia de <span>diseño web</span></p>
+        </div> <!-- .informacion evento-->
+      </div>
+    </div> <!-- .hero-->
+  </header>
+  
+  <div class="barra">
+    <div class="contenedor clearfix">
+      <div class="logo">
+        <img src="img/logo.svg" alt="logo gldwebcamp">
+      </div>
+
+      <div class="menu-movil">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="navegacion-principal clearfix">
+        <a href="#">Conferencia</a>
+        <a href="#">Calendario</a>
+        <a href="#">Invitados</a>
+        <a href="#">Reservaciones</a>
+      </nav>
+    </div> <!--.contenedor-->
+  </div> <!--.barra-->
+
+  <section class="seccion contenedor">
+    <h2> La mejor conferencia de diseño web en español</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales, nisl a varius egestas, nulla nisi sollicitudin erat, sit amet varius ante lectus at lorem. In dictum accumsan orci ac malesuada. Nullam nec felis mi. Phasellus id elementum massa. Morbi sodales vitae ipsum ut consequat. Mauris nec enim vitae metus aliquam gravida sit amet in dui. Etiam ut nisl fermentum sapien sollicitudin vulputate. Integer sit amet pulvinar nibh. Nullam laoreet placerat ornare.
+    </p>
+  </section> <!--.seccion-->
+
+  <section class="programa">
+    <div class="contenedor-video">
+      <video autoplay loop poster="img/bg-talleres.jpg">
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.webm" type="video/webm">
+        <source src="video/video.ogv" type="video/ogv">
+
+      </video>
+    </div>
+  </section>
+
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
