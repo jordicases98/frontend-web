@@ -62,7 +62,7 @@
       </div>
 
       <nav class="navegacion-principal clearfix">
-        <a href="#">Conferencia</a>
+        <a href="conferencia.html">Conferencia</a>
         <a href="#">Calendario</a>
         <a href="#">Invitados</a>
         <a href="registro.html">Reservaciones</a>
@@ -92,9 +92,9 @@
         <div class="programa-evento">
           <h2>Programa del Evento</h2>
           <nav class="menu-programa">
-            <a href=""><i class="fa fa-code" aria-hidden="true"></i>Talleres</a>
-            <a href=""><i class="fa fa-comment" aria-hidden="true"></i>Conferencias</a>
-            <a href=""><i class="fa fa-university" aria-hidden="true"></i>Seminarios</a>
+            <a href="#talleres"><i class="fa fa-code" aria-hidden="true"></i>Talleres</a>
+            <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i>Conferencias</a>
+            <a href="#seminarios"><i class="fa fa-university" aria-hidden="true"></i>Seminarios</a>
           </nav>
           <div id ="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
@@ -103,13 +103,14 @@
               <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
               <p><i class="fa fa-user" aria-hidden="true"></i> Jordi Cases</p>
             </div>
-      
+          
             <div class="detalle-evento">
               <h3>Responsive Web Desing</h3>
               <p><i class="far fa-clock" aria-hidden="true"></i> 20:00</p>
               <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
               <p><i class="fa fa-user" aria-hidden="true"></i> Jordi Cases</p>
             </div>
+          </div> <!--talleres-->  
             <div id ="conferencias" class="info-curso ocultar clearfix">
               <div class="detalle-evento">
                 <h3>Como ser freelancer</h3>
@@ -117,13 +118,13 @@
                 <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
                 <p><i class="fa fa-user" aria-hidden="true"></i> Gregorio Sanchez</p>
               </div>
-              
               <div class="detalle-evento">
                 <h3>Tecnología del Futuro</h3>
                 <p><i class="far fa-clock" aria-hidden="true"></i> 20:00</p>
                 <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 Dic</p>
                 <p><i class="fa fa-user" aria-hidden="true"></i> Susana Sanchez</p>
               </div>
+            </div> <!--conferencias-->  
               <div id ="seminarios" class="info-curso ocultar clearfix">
                 <div class="detalle-evento">
                   <h3>Diseño UX/Ui para móviles</h3>
@@ -131,15 +132,16 @@
                   <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 Dic</p>
                   <p><i class="fa fa-user" aria-hidden="true"></i> Jarolds Garcia</p>
                 </div>
-                
+              
                 <div class="detalle-evento">
                   <h3>Aprende a programar en una mañana</h3>
                   <p><i class="far fa-clock" aria-hidden="true"></i> 20:00</p>
                   <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
                   <p><i class="fa fa-user" aria-hidden="true"></i> Jordi Cases</p>
                 </div>
+              </div> <!--seminarios--> 
             <a href="#" class="button float-right">Ver Todos</a>
-          </div> <!--talleres-->
+          
         </div> <!--.programa-evento-->
       </div><!--contenedor-->
     </div> <!--.contenido-programa-->
@@ -188,10 +190,10 @@
   <div class="contador parallax">
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
-        <li><p class="numero">6</p>Invitados</li>
-        <li><p class="numero">15</p>Talleres</li>
-        <li><p class="numero">3</p>Dias</li>
-        <li><p class="numero">9</p>Conferencias</li>
+        <li><p class="numero"></p>Invitados</li>
+        <li><p class="numero"></p>Talleres</li>
+        <li><p class="numero"></p>Dias</li>
+        <li><p class="numero"></p>Conferencias</li>
       </ul>
     </div>
   </div>
@@ -288,10 +290,10 @@
     <h2>Faltan</h2>
     <div class="cuenta-regresiva contenedor">
       <ul class="clearfix">
-        <li><p class="numero">80</p>días</li>
-        <li><p class="numero">15</p>horas</li>
-        <li><p class="numero">5</p>minutos </li>
-        <li><p class="numero">30</p>segundos</li>
+        <li><p id="dias" class="numero"></p>días</li>
+        <li><p id="horas" class="numero"></p>horas</li>
+        <li><p id="minutos"class="numero"></p>minutos </li>
+        <li><p id="segundos"class="numero"></p>segundos</li>
       </ul>
     </div>
   </section>
@@ -322,7 +324,9 @@
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
+  <script src="aishek-jquery-animateNumber-8b31991/jquery.animateNumber.min.js"></script>
+  <script src="jquery.countdown-2.2.0/jquery.countdown.min.js"></script>
+  <script src="Lettering.js-master/jquery.lettering.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
