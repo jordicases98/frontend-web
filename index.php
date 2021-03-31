@@ -1,75 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/all.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-  <header class="class-header">
-    <div class="hero">
-      <div class="contenido-header">
-        <nav class="redes-sociales">
-          <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
-          <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-          <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        </nav>
-        <div class="informacion-evento">
-          <div class="clearfix">
-            <p class="fecha"><i class="fas fa-calendar-alt"></i> 10-12</p>
-            <p class="ciudad"><i class="fas fa-map-marker"></i> Barcelona, CAT</p>
-          </div>  
-        
-          <h1 class="nombre-sitio" >GdlWebCamp</h1>
-          <p class="slogan"> La mejor conferencia de <span>diseño web</span></p>
-        </div> <!-- .informacion evento-->
-      </div>
-    </div> <!-- .hero-->
-  </header>
-  
-  <div class="barra">
-    <div class="contenedor clearfix">
-      <div class="logo">
-        <img src="img/logo.svg" alt="logo gldwebcamp">
-      </div>
-
-      <div class="menu-movil">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="navegacion-principal clearfix">
-        <a href="conferencia.html">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
-        <a href="registro.html">Reservaciones</a>
-      </nav>
-    </div> <!--.contenedor-->
-  </div> <!--.barra-->
-
+<?php include_once 'includes/templates/header.php';?>
   <section class="seccion contenedor">
     <h2> La mejor conferencia de diseño web en español</h2>
     <p>
@@ -286,7 +215,7 @@
     </div> <!--.contenido-->
   </div> <!--.newsletter-->
 
-  <sectio class="seccion">
+  <section class="seccion">
     <h2>Faltan</h2>
     <div class="cuenta-regresiva contenedor">
       <ul class="clearfix">
@@ -297,45 +226,5 @@
       </ul>
     </div>
   </section>
-  <footer class="site-footer">
-    <div class="contenedor clearfix">
-        <div class="footer-informacion">
-            <h3>Sobre <span>gdlwebcamp</span></h3>
-            <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex
-                blandit vehicula. Morbi porttitor tempus euismod.</p>
-        </div>
-        <div class="ultimos-tweets">
-            <h3>Últimos <span>tweets</span></h3>
-            <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#fe4918" href="https://twitter.com/JuanDevWP">Tweets by JuanDevWP</a>
-            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="menu">
-            <h3>Redes <span>sociales</span></h3>
-            <nav class="redes-sociales">
-              <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-              <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-              <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
-              <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-              <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            </nav>
-        </div>
-    </div>
-  
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="aishek-jquery-animateNumber-8b31991/jquery.animateNumber.min.js"></script>
-  <script src="jquery.countdown-2.2.0/jquery.countdown.min.js"></script>
-  <script src="Lettering.js-master/jquery.lettering.js"></script>
-  <script src="imakewebthings-waypoints-34d9f6d/lib/jquery.waypoints.min.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
 </html>
+<?php include_once 'includes/templates/footer.php';?>
