@@ -14,13 +14,28 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+
+  <?php
+    $archivo = basename ($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php","", $archivo);
+    if ($pagina == 'invitados' || $pagina == 'index') {
+      echo '<link rel="stylesheet" href="css/colorbox.css">';
+    }
+    else if ($pagina == 'conferencia') {
+      echo '<link rel="stylesheet" href="lightbox2-dev/css/lightbox.css">';
+    }
+
+  ?>
+
+  <link rel="stylesheet" href="css/colorbox.css">
   <link rel="stylesheet" href="css/main.css">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="<?php echo $pagina; ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -65,8 +80,8 @@
 
       <nav class="navegacion-principal clearfix">
         <a href="conferencia.php">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
+        <a href="calendario.php">Calendario</a>
+        <a href="invitados.php">Invitados</a>
         <a href="registro.php">Reservaciones</a>
       </nav>
     </div> <!--.contenedor-->

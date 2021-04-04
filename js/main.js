@@ -8,7 +8,11 @@ $(function(){
 
     //Lettering
     $('.nombre-sitio').lettering();
-
+    // Agregar clase a menú
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+    
     //Menu fijo
 
     var windowHeight = $(window).height();
@@ -45,9 +49,11 @@ $(function(){
         return false;
     });
 
+ 
+
     // Animaciones para los números
     var resumenLista = jQuery('.resumen-evento');
-    console.log(resumenLista);
+    //console.log(resumenLista);
     if (resumenLista.length > 0) {
         $('.resumen-evento').waypoint ( function(){
         $('.resumen-evento li:nth-child(1) p').animateNumber({number:6}, 1200);
@@ -67,4 +73,8 @@ $(function(){
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+       
+    // Colorbox
+    $('.invitado-info').colorbox({inline:true, width:"50%"});
+
 });
