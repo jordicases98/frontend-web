@@ -644,7 +644,7 @@ div.tabla-precio p.numero {
 }
 
 /** MAPA **/
-div.mapa {
+#mapa {
   height: 420px;
   background-color: green ;
 }

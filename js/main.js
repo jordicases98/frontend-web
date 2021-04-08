@@ -1,8 +1,7 @@
 $(function(){
     //alert('Funciona');
     //$('.div ocultar').hide();
-    var regalo = document.getElementById('regalo');
-    
+    console.log("arribo aki");
     document.addEventListener('DOMContentLoaded', function() {
 		if (document.getElementById('calcular')) {
 			var regalo = document.getElementById('regalo');
@@ -17,13 +16,13 @@ $(function(){
 			var pase_dosdias = document.getElementById('pase_dosdias');
 			var pase_completo = document.getElementById('pase_completo');
 
-			// mostrar en editar
+			/* mostrar en editar
 			var formulario_editar = document.getElementsByClassName('editar-registrado');
 			if (formulario_editar.length > 0) {
 				if (pase_dia.value || pase_dosdias.value || pase_completo) {
 					mostrarDias();
 				}
-			}
+			} */
 
 			//Botones y divs
 			var calcular = document.getElementById('calcular');
@@ -37,8 +36,8 @@ $(function(){
 			var camisas = document.getElementById('camisa_evento');
 			var etiquetas = document.getElementById('etiquetas');
 
-			botonRegistro.disabled = true;
-
+			//botonRegistro.disabled = true;
+			console.log("arribo aqki");
 			calcular.addEventListener('click', calcularMontos);
 
 			pase_dia.addEventListener('input', mostrarDias);
@@ -159,93 +158,95 @@ $(function(){
 				}
 			}
 		}
+	
+		
 
 		// Mapa
 		if (document.getElementById('mapa')) {
-			var map = L.map('mapa').setView([ 20.674739, -103.387566 ], 16);
+			var mymap = L.map('mapa').setView([51.505, -0.09], 13);
+			
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				maxZoom: 18,
+				id: 'mapbox/streets-v11',
+				tileSize: 512,
+				zoomOffset: -1,
+				accessToken: 'your.mapbox.access.token'
+			}).addTo(mymap);
+		
+		}	
+		//Lettering
+		$('.nombre-sitio').lettering();
+		// Agregar clase a menú
+		$('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+		$('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+		$('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+		
+		//Menu fijo
 
-			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+		var windowHeight = $(window).height();
+		var barraAltura = $('.barra').innerHeight();
 
-			L.marker([ 20.674739, -103.387566 ]).addTo(map).bindPopup('GDLWebCAMP 2018').openPopup();
-			// .bindTooltip('GDLWebCamp 2018, Boletos ya disponibles')
-			// .openTooltip();
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+			if (scroll > windowHeight) {
+				$('.barra').addClass('fixed');
+				$('body').css({'margin-top' : barraAltura+'px'});
+			}
+			else {
+				$('.barra').removeClass('fixed');
+				$('body').css({'margin-top' : '0px'});
+			}
+		});
+
+		// Menu Responsive
+		$('.menu-movil').on('click', function() {
+			$('.navegacion-principal').slideToggle();
+		});
+
+		// Programa de conferencias
+		$('.programa-evento .info-curso').hide();
+		$('.programa-evento .info-curso:first').show();
+		$('.menu-programa a:first').addClass('activo');
+
+		$('.menu-programa a').on('click', function() {
+			$('.menu-programa a').removeClass('activo');
+			$(this).addClass('activo');
+			$('.ocultar').hide();
+			var enlace = $(this).attr('href');
+			$(enlace).fadeIn(1000);
+			return false;
+		});
+
+	
+
+		// Animaciones para los números
+		var resumenLista = jQuery('.resumen-evento');
+		//console.log(resumenLista);
+		if (resumenLista.length > 0) {
+			$('.resumen-evento').waypoint ( function(){
+			$('.resumen-evento li:nth-child(1) p').animateNumber({number:6}, 1200);
+			$('.resumen-evento li:nth-child(2) p').animateNumber({number:15}, 1200);
+			$('.resumen-evento li:nth-child(3) p').animateNumber({number:9}, 2000);
+			$('.resumen-evento li:nth-child(4) p').animateNumber({number:3}, 1500);
+			}, {
+				offset: '60%'
+			});
 		}
+
+		// Cuenta regresiva
+
+		$('.cuenta-regresiva').countdown('2021/12/10 09:00:00', function(event){
+			$('#dias').html(event.strftime('%D'));
+			$('#horas').html(event.strftime('%H'));
+			$('#minutos').html(event.strftime('%M'));
+			$('#segundos').html(event.strftime('%S'));
+		});
+		
+		// Colorbox
+		$('.invitado-info').colorbox({inline:true, width:"50%"});
+			
 	});
 
-
-    if (document.getElementById('calcular')){
-        //ejecuta codigo
-    }
-
-    //Lettering
-    $('.nombre-sitio').lettering();
-    // Agregar clase a menú
-    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
-    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
-    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
-    
-    //Menu fijo
-
-    var windowHeight = $(window).height();
-    var barraAltura = $('.barra').innerHeight();
-
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        if (scroll > windowHeight) {
-            $('.barra').addClass('fixed');
-            $('body').css({'margin-top' : barraAltura+'px'});
-        }
-        else {
-            $('.barra').removeClass('fixed');
-            $('body').css({'margin-top' : '0px'});
-        }
-    });
-
-    // Menu Responsive
-    $('.menu-movil').on('click', function() {
-        $('.navegacion-principal').slideToggle();
-    });
-
-    // Programa de conferencias
-    $('.programa-evento .info-curso').hide();
-    $('.programa-evento .info-curso:first').show();
-    $('.menu-programa a:first').addClass('activo');
-
-    $('.menu-programa a').on('click', function() {
-        $('.menu-programa a').removeClass('activo');
-        $(this).addClass('activo');
-        $('.ocultar').hide();
-        var enlace = $(this).attr('href');
-        $(enlace).fadeIn(1000);
-        return false;
-    });
-
- 
-
-    // Animaciones para los números
-    var resumenLista = jQuery('.resumen-evento');
-    //console.log(resumenLista);
-    if (resumenLista.length > 0) {
-        $('.resumen-evento').waypoint ( function(){
-        $('.resumen-evento li:nth-child(1) p').animateNumber({number:6}, 1200);
-        $('.resumen-evento li:nth-child(2) p').animateNumber({number:15}, 1200);
-        $('.resumen-evento li:nth-child(3) p').animateNumber({number:9}, 2000);
-        $('.resumen-evento li:nth-child(4) p').animateNumber({number:3}, 1500);
-        }, {
-            offset: '60%'
-        });
-    }
-
-    // Cuenta regresiva
-
-    $('.cuenta-regresiva').countdown('2021/12/10 09:00:00', function(event){
-        $('#dias').html(event.strftime('%D'));
-        $('#horas').html(event.strftime('%H'));
-        $('#minutos').html(event.strftime('%M'));
-        $('#segundos').html(event.strftime('%S'));
-    });
-       
-    // Colorbox
-    $('.invitado-info').colorbox({inline:true, width:"50%"});
-
+		
 });

@@ -16,8 +16,14 @@
   <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
-
-  <?php
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/colorbox.css">
+  <link rel="stylesheet" href="lightbox2-dev/dist/css/lightbox.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+  
+  <?php /*
     $archivo = basename ($_SERVER['PHP_SELF']);
     $pagina = str_replace(".php","", $archivo);
     if ($pagina == 'invitados' || $pagina == 'index') {
@@ -26,10 +32,9 @@
     else if ($pagina == 'conferencia') {
       echo '<link rel="stylesheet" href="lightbox2-dev/css/lightbox.css">';
     }
-
+ */
   ?>
 
-  <link rel="stylesheet" href="css/colorbox.css">
   <link rel="stylesheet" href="css/main.css">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <meta name="theme-color" content="#fafafa">

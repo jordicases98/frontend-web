@@ -172,9 +172,8 @@
       </ul>
     </div>
   </section>
-
-  <div id="mapa" class="mapa">
-  </div>
+                  
+  <div id="mapa"></div>
 
   <section class="seccion">
     <h2>Testimoniales</h2>
