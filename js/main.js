@@ -1,11 +1,9 @@
 $(function(){
-    //alert('Funciona');
+
     //$('.div ocultar').hide();
-    console.log("arribo aki");
-    document.addEventListener('DOMContentLoaded', function() {
+    // document.addEventListener('DOMContentLoaded', function (
 		if (document.getElementById('calcular')) {
 			var regalo = document.getElementById('regalo');
-
 			// Campos Datos usuario
 			var nombre = document.getElementById('nombre');
 			var apellido = document.getElementById('apellido');
@@ -36,8 +34,7 @@ $(function(){
 			var camisas = document.getElementById('camisa_evento');
 			var etiquetas = document.getElementById('etiquetas');
 
-			//botonRegistro.disabled = true;
-			console.log("arribo aqki");
+			botonRegistro.disabled = true;
 			calcular.addEventListener('click', calcularMontos);
 
 			pase_dia.addEventListener('input', mostrarDias);
@@ -115,9 +112,10 @@ $(function(){
 						lista_productos.innerHTML += listadoProductos[i] + '<br/>';
 					}
 					suma.innerHTML = '$ ' + totalPagar.toFixed(2);
-
 					botonRegistro.disabled = false;
-					document.getElementById('total_pedido').value = totalPagar;
+					console.log(totalPagar);
+					document.addEventListener('DOMContentLoaded', function() {
+						document.getElementById('total_pedido').value = totalPagar; });
 				}
 			}
 
@@ -246,7 +244,7 @@ $(function(){
 		// Colorbox
 		$('.invitado-info').colorbox({inline:true, width:"50%"});
 			
-	});
+	//});
 
 		
 });
