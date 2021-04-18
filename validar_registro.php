@@ -1,27 +1,38 @@
-<?php include_once 'includes/templates/header.php';?>
-<section class="seccion contenedor">
-    <h2>Registro de usuarios</h2>
-    <?php if(isset($_POST['submit'])):
+<?php if(isset($_POST['submit'])):
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $email = $_POST['email'];
         $regalo = $_POST['regalo'];
         $total = $_POST['total_pedido'];
         $fecha = date('Y-m-d H:i:s');
-
-        //Pedidos
         $boletos = $_POST['boletos'];
         $camisas = $_POST['pedido_camisas'];
         $etiquetas = $_POST['pedido_etiquetas'];
         include_once 'funciones.php';
         $pedido = productos_json($boletos,$camisas,$etiquetas);
-        echo "<pre>";   
-        var_dump($pedido);
-        echo "</pre>";
+        $eventos = $_POST['registro'];
+        $registro = eventos_json($eventos);
+
+        try {
+            require_once('includes/funciones/bd_conexion.php');
+            $stmt = $conn->prepare("INSERT INTO registrados (nombre_registrado, apellido_registrado,email_registrado,fecha_registro,pases_articulos,talleres_registrados,regalo,total_pagado) VALUES (?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("ssssssis", $nombre, $apellido, $email, $fecha, $pedido, $registro, $regalo, $total);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
+            header('Location: validar_registro.php?exitoso=1');
+        }
+        catch (\Exception $e) {
+            echo $e->getMessage();
+        }
     ?>
-    <pre>
-        <?php var_dump($_POST); ?>
-    </pre>
-    <?php endif; ?>
-</section>
-<?php include_once 'includes/templates/footer.php';?>
+<?php endif; ?>        
+   
+    <?php include_once 'includes/templates/header.php';?>
+    <section class="seccion contenedor">
+        <h2>Registro de usuarios</h2>
+        <?php if(isset($_GET['exitoso'])):
+            echo "Registro exisitoso";
+        endif;?>
+    </section>
+    <?php include_once 'includes/templates/footer.php';?>

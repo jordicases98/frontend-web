@@ -243,7 +243,8 @@ $(function(){
 		
 		// Colorbox
 		$('.invitado-info').colorbox({inline:true, width:"50%"});
-			
+		
+		$('.boton-newsletter').colorbox({inline:true, width:"50%"});
 	//});
 
 		
